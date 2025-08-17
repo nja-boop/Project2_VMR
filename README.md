@@ -4,14 +4,27 @@ This project is an intraday VWAP mean reversion strategy for MES futures. The id
 
 ## Project Structure
 
-└── README.md
+├── data
+│   └── processed
+│       ├── mes_all_prepared.parquet
+│       └── mes_all.parquet
+├── Notebooks
+│   └── phase1_data_preparation.ipynb
+├── README.md
+└── src
+    ├── download_all.py
+    ├── fetch_mes.py
+    ├── merge_all.py
+    └── prepare_mes.py
 
 ## Progress
 
 ### In Progress
 
 **Phase 1 - Data Collection & Preprocessing (8/14/25)**
-- Get data
+- Get data from databento for MES (Micro E-mini SP500) 1m OHLCV for last ~2 years
+- Merge each one day file into a single dataset
+- Add columns for session (RTH/ETH), VWAP (Volume Weighted Average Price), 1m returns, and 15m volatility (measured as std dev of last 15 1m returns)
 
 ### Planned
 
